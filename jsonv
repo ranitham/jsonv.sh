@@ -96,7 +96,7 @@ jsonv () {
   fi
 
   echo_log "Counting entries"
-  count=$(cat $tokens | sed 's/^[\["a-z,]*//g' | sed 's/,.*//g' | gawk '/^[0-9]+$/ && !_[$0]++' | gawk -F\t 'BEGIN{max==""} ($1 > max) {max=$1} END{print max}')
+  count=$(cat $tokens | sed 's/^[\["a-Z,]*//g' | sed 's/,.*//g' | gawk '/^[0-9]+$/ && !_[$0]++' | gawk -F\t 'BEGIN{max==""} ($1 > max) {max=$1} END{print max}')
 
   echo_log "Writing map file"
   row=''
